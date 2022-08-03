@@ -2,7 +2,7 @@
 
 require "bootstrap.php";
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\ApiClient;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Client;
 
-$apiClient = new ApiClient();
+$apiClient = new Client();
 dump($apiClient->todos()->first());

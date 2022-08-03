@@ -7,7 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 
-final class ApiClient
+final class Client
 {
     /**
      * clientBuilder

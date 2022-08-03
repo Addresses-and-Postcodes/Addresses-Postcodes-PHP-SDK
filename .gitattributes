@@ -1,0 +1,10 @@
+* text=auto
+
+*.css diff=css
+*.php diff=php
+*.html diff=html
+*.md diff=markdown
+
+/.* export-ignore
+/tests export-ignore
+.styleci.yml export-ignore

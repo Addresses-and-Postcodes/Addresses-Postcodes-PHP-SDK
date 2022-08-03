@@ -19,6 +19,6 @@ final class Todos extends EndpointBase
 
     public function all(): array
     {
-        return ResponseHandler::getContent($this->apiClient->get('/todos'));
+        return ResponseHandler::getContent($this->client->get('/todos'));
     }
 }

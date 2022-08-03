@@ -2,16 +2,16 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\ApiClient;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Client;
 
 class EndpointBase
 {
     /**
      * apiClient
      *
-     * @var ApiClient
+     * @var Client
      */
-    protected $apiClient;
+    protected $client;
 
     /**
      * __construct
@@ -19,8 +19,8 @@ class EndpointBase
      * @param  ApiClient $apiClient
      * @return void
      */
-    public function __construct(ApiClient $apiClient)
+    public function __construct(Client $client)
     {
-        $this->apiClient = $apiClient;
+        $this->client = $client;
     }
 }
