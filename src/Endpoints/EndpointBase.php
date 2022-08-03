@@ -16,7 +16,7 @@ class EndpointBase
     /**
      * __construct
      *
-     * @param  ApiClient $apiClient
+     * @param  Client $client
      * @return void
      */
     public function __construct(Client $client)

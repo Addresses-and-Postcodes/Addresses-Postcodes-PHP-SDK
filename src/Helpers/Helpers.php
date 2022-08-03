@@ -23,6 +23,7 @@ final class Helpers
      */
     public static function getLastValueOfArray(array $value): array
     {
-        return end((array_values($value)));
+        $arr = array_values($value);
+        return end($arr);
     }
 }

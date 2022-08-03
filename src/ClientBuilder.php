@@ -9,6 +9,7 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\PluginClientFactory;
 use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\RequestFactoryInterface;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 
@@ -34,12 +35,14 @@ final class ClientBuilder
      *
      * @var array
      */
-    private $plugins = [];
+    private array $plugins = [];
 
     /**
      * __construct
      *
-     * @param HttpClient|null $httpClient Client to do HTTP requests, if not set, auto discovery will be used to find a HTTP client.
+     * @param  ClientInterface $httpClient Client to do HTTP requests, if not set, auto discovery will be used to find a HTTP client.
+     * @param  RequestFactoryInterface $requestFactoryInterface
+     * @param  StreamFactoryInterface $streamFactoryInterface
      * @return void
      */
     public function __construct(ClientInterface $httpClient = null, RequestFactoryInterface $requestFactoryInterface = null, StreamFactoryInterface $streamFactoryInterface = null)

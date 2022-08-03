@@ -4,12 +4,4 @@ parameters:
     level: 6
     paths:
         - src
-
-    ignoreErrors:
-        # Ignore typehint errors on api classes
-        -
-            message: '#Method (.*) with no typehint specified\.#'
-            path: src
-        -
-            message: '#Method (.*) has no return typehint specified\.#'
-            path: src
+        - tests
