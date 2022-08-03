@@ -1,12 +1,13 @@
 {
     "name": "addresses-and-postcodes/lookup-php-sdk",
+    "homepage": "https://github.com/Addresses-and-Postcodes/Addresses-Postcodes-PHP-SDK",
     "description": "Addresses and Postcodes - Lookup PHP SDK",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "Postcodes",
         "Addresses"
     ],
-    "license": "MIT",
-    "type": "library",
     "authors": [
         {
             "name": "Moussa Ball",
@@ -32,6 +33,11 @@
     "autoload": {
         "psr-4": {
             "AddressesAndPostcodes\\Lookup\\PHP\\SDK\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AddressesAndPostcodes\\Lookup\\PHP\\SDK\\Tests\\": "tests/"
         }
     },
     "config": {
