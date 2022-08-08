@@ -29,27 +29,18 @@ final class Client
      * @param  ClientBuilder $clientBuilder
      * @return void
      */
-    public function __construct(string $api_key, ClientBuilder $clientBuilder = null, UriFactory $uriFactory = null)
+    public function __construct(string $api_key, bool $enable_error_handler = false, ClientBuilder $clientBuilder = null, UriFactory $uriFactory = null)
     {
         $this->api_key = $api_key;
         $this->clientBuilder = $clientBuilder ?: new ClientBuilder();
+        if ($enable_error_handler) $this->clientBuilder->enableErrorHandler();
         $uriFactory = $uriFactory ?: Psr17FactoryDiscovery::findUriFactory();
-        $this->clientBuilder->addPlugin(new BaseUriPlugin($uriFactory->createUri('https://addressesandpostcodes.co.uk/api/v3/')));
+        $this->clientBuilder->addPlugin(new BaseUriPlugin($uriFactory->createUri('http://postcodes.test/api/v3/')));
         $this->clientBuilder->setHeaders([
             'User-Agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1',
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ]);
-    }
-
-    /**
-     * Enable Error Handler.
-     *
-     * @return void
-     */
-    public function enableErrorHandler(): void
-    {
-        $this->clientBuilder->enableErrorHandler();
     }
 
     /**
