@@ -4,7 +4,7 @@ namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
 use AddressesAndPostcodes\Lookup\PHP\SDK\Client;
 
-class EndpointBase
+abstract class EndpointBase
 {
     /**
      * apiClient

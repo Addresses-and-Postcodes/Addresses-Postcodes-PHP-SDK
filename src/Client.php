@@ -34,7 +34,7 @@ final class Client
         $this->api_key = $api_key;
         $this->clientBuilder = $clientBuilder ?: new ClientBuilder();
         $uriFactory = $uriFactory ?: Psr17FactoryDiscovery::findUriFactory();
-        $this->clientBuilder->addPlugin(new BaseUriPlugin($uriFactory->createUri('http://postcodes.test/api/v3/')));
+        $this->clientBuilder->addPlugin(new BaseUriPlugin($uriFactory->createUri('https://addressesandpostcodes.co.uk/api/v3/')));
         $this->clientBuilder->setHeaders([
             'User-Agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1',
             'Content-Type' => 'application/json',

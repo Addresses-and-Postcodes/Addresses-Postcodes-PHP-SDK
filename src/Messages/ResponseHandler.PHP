@@ -3,6 +3,7 @@
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Messages;
 
 use AddressesAndPostcodes\Lookup\PHP\SDK\Exceptions\InvalidAPITokenException;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Exceptions\OutOfLookupCreditsException;
 use AddressesAndPostcodes\Lookup\PHP\SDK\Exceptions\PostcodeAreaException;
 use Psr\Http\Message\ResponseInterface;
 
@@ -27,6 +28,9 @@ final class ResponseHandler
                     break;
                 case str_contains(strtolower($output['error']), 'area was not found'):
                     throw new PostcodeAreaException($output['error']);
+                    break;
+                case str_contains(strtolower($output['error']), 'lookup credits'):
+                    throw new OutOfLookupCreditsException($output['error']);
                     break;
             }
         }
