@@ -63,14 +63,12 @@ final class Client
     }
 
     /**
-     * Get area boundary path.
+     * Boundaries.
      *
-     * Retrieve a list of coordinates to produce a polygon around the postcode area.
-     *
-     * @return Endpoints\AreaBoundaryPath
+     * @return Endpoints\Boundaries
      */
-    public function areaBoundaryPath(): Endpoints\AreaBoundaryPath
+    public function boundaries(): Endpoints\Boundaries
     {
-        return new Endpoints\AreaBoundaryPath($this);
+        return new Endpoints\Boundaries($this);
     }
 }
