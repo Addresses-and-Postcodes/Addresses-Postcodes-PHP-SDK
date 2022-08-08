@@ -16,6 +16,8 @@
     ],
     "require": {
         "php": "^7.4",
+        "league/booboo": "^2.1",
+        "mzdr/oh-snap": "^1.0",
         "php-http/client-common": "^2.5",
         "php-http/discovery": "^1.14",
         "php-http/httplug": "^2.3",
