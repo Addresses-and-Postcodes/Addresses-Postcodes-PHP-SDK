@@ -2,9 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK;
 
-use Http\Message\UriFactory;
 use Psr\Http\Message\ResponseInterface;
-use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 
 final class Client
@@ -26,16 +24,22 @@ final class Client
     /**
      * __construct
      *
-     * @param  ClientBuilder $clientBuilder
+     * @param  string $api_key
+     * @param  bool $enable_error_handler
      * @return void
      */
-    public function __construct(string $api_key, bool $enable_error_handler = false, ClientBuilder $clientBuilder = null, UriFactory $uriFactory = null)
+    public function __construct(string $api_key, bool $enable_error_handler = false, Options $options = null)
     {
+        // API Key & New Options
         $this->api_key = $api_key;
-        $this->clientBuilder = $clientBuilder ?: new ClientBuilder();
+        $options = $options ?? new Options();
+
+        // Client Builder
+        $this->clientBuilder = $options->getClientBuilder();
         if ($enable_error_handler) $this->clientBuilder->enableErrorHandler();
-        $uriFactory = $uriFactory ?: Psr17FactoryDiscovery::findUriFactory();
-        $this->clientBuilder->addPlugin(new BaseUriPlugin($uriFactory->createUri('http://postcodes.test/api/v3/')));
+        $this->clientBuilder->addPlugin(new BaseUriPlugin($options->getUri()));
+
+        // Set Headers
         $this->clientBuilder->setHeaders([
             'User-Agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1',
             'Content-Type' => 'application/json',
