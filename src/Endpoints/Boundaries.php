@@ -19,4 +19,15 @@ final class Boundaries extends EndpointBase
     {
         return ResponseHandler::getContent($this->client->get("/areas/{$area}/path"));
     }
+
+    /**
+     * Retrieve a list of coordinates to produce a polygon around the postcode sector.
+     *
+     * @param  string $sector The sector that needs to be recovered.
+     * @return array
+     */
+    public function getSectorBoundaryPath(string $sector): array
+    {
+        return ResponseHandler::getContent($this->client->get("/sectors/{$sector}/path"));
+    }
 }

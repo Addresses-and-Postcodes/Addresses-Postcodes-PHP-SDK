@@ -6,3 +6,6 @@ composer.phar
 # IDE
 /.idea
 /.vscode
+
+# Files
+.env

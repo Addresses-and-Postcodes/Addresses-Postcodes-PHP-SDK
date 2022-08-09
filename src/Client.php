@@ -4,6 +4,7 @@ namespace AddressesAndPostcodes\Lookup\PHP\SDK;
 
 use Psr\Http\Message\ResponseInterface;
 use Http\Client\Common\Plugin\BaseUriPlugin;
+use Http\Client\Common\HttpMethodsClientInterface;
 
 final class Client
 {
@@ -36,7 +37,9 @@ final class Client
 
         // Client Builder
         $this->clientBuilder = $options->getClientBuilder();
-        if ($enable_error_handler) $this->clientBuilder->enableErrorHandler();
+        if ($enable_error_handler) {
+            $this->clientBuilder->enableErrorHandler();
+        }
         $this->clientBuilder->addPlugin(new BaseUriPlugin($options->getUri()));
 
         // Set Headers
@@ -45,6 +48,16 @@ final class Client
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
         ]);
+    }
+
+    /**
+     * Get Http Client.
+     *
+     * @return HttpMethodsClientInterface
+     */
+    public function getHttpClient(): HttpMethodsClientInterface
+    {
+        return $this->clientBuilder->getHttpClient();
     }
 
     /**
