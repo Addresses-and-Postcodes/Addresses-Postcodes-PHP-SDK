@@ -65,8 +65,10 @@ final class Client
      *
      * @return ResponseInterface
      */
-    public function get(string $endpoint): ResponseInterface
+    public function get(string $endpoint, string $end_uri = null): ResponseInterface
     {
+        if ($end_uri)
+            return $this->clientBuilder->getHttpClient()->get("$endpoint?key={$this->api_key}&$end_uri");
         return $this->clientBuilder->getHttpClient()->get("$endpoint?key={$this->api_key}");
     }
 
@@ -78,5 +80,35 @@ final class Client
     public function boundaries(): Endpoints\Boundaries
     {
         return new Endpoints\Boundaries($this);
+    }
+
+    /**
+     * Sectors
+     *
+     * @return Endpoints\Sectors
+     */
+    public function sectors(): Endpoints\Sectors
+    {
+        return new Endpoints\Sectors($this);
+    }
+
+    /**
+     * Postcodes
+     *
+     * @return Endpoints\Postcodes
+     */
+    public function postcodes(): Endpoints\Postcodes
+    {
+        return new Endpoints\Postcodes($this);
+    }
+
+    /**
+     * Addresses
+     *
+     * @return Endpoints\Addresses
+     */
+    public function addresses(): Endpoints\Addresses
+    {
+        return new Endpoints\Addresses($this);
     }
 }

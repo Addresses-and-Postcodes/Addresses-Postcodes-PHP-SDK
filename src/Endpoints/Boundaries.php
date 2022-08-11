@@ -5,7 +5,7 @@ namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
 
 /**
- * AreaBoundaryPath
+ * Boundaries
  */
 final class Boundaries extends EndpointBase
 {
