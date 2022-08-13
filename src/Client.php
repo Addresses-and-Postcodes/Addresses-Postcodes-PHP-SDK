@@ -65,11 +65,35 @@ final class Client
      *
      * @return ResponseInterface
      */
-    public function get(string $endpoint, string $end_uri = null): ResponseInterface
+    public function get(string $uri, string $end_uri = null): ResponseInterface
     {
         if ($end_uri)
-            return $this->clientBuilder->getHttpClient()->get("$endpoint?key={$this->api_key}&$end_uri");
-        return $this->clientBuilder->getHttpClient()->get("$endpoint?key={$this->api_key}");
+            return $this->clientBuilder->getHttpClient()->get("$uri?key={$this->api_key}&$end_uri");
+        return $this->clientBuilder->getHttpClient()->get("$uri?key={$this->api_key}");
+    }
+
+    /**
+     * Send data to endpoints with POST method using API key.
+     *
+     * @param  string|UriInterface $uri
+     * @return ResponseInterface
+     */
+    public function post(string $uri, array $data = [], string $body = ''): ResponseInterface
+    {
+        return $this->clientBuilder->getHttpClient()->post("$uri?key={$this->api_key}", $data, $body);
+    }
+
+    /**
+     * Sends a DELETE request.
+     *
+     * @param string|UriInterface $uri
+     * @param string|StreamInterface|null $body
+     *
+     * @throws Exception
+     */
+    public function delete($uri, array $headers = [], $body = null): ResponseInterface
+    {
+        return $this->clientBuilder->getHttpClient()->delete("$uri?key={$this->api_key}", $headers, $body);
     }
 
     /**
@@ -110,5 +134,25 @@ final class Client
     public function addresses(): Endpoints\Addresses
     {
         return new Endpoints\Addresses($this);
+    }
+
+    /**
+     * PostcodeInformation
+     *
+     * @return Endpoints\PostcodeInformation
+     */
+    public function postcodeInformation(): Endpoints\PostcodeInformation
+    {
+        return new Endpoints\PostcodeInformation($this);
+    }
+
+    /**
+     * StoringInformation
+     *
+     * @return Endpoints\StoringInformation
+     */
+    public function storingInformation(): Endpoints\StoringInformation
+    {
+        return new Endpoints\StoringInformation($this);
     }
 }
