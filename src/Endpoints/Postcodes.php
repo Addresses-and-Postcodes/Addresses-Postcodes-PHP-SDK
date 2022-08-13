@@ -25,7 +25,7 @@ final class Postcodes extends EndpointBase
      * @error Not working properly.
      * @return array
      */
-    public function postcodeListByPolygon(): array
+    public function postcodeListByPolygon(string $path): array
     {
         return ResponseHandler::getContent($this->client->get("/postcodes/list/by/path"));
     }

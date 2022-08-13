@@ -155,4 +155,14 @@ final class Client
     {
         return new Endpoints\StoringInformation($this);
     }
+
+    /**
+     * PostcodeAPI
+     *
+     * @return Endpoints\PostcodeAPI
+     */
+    public function postcodeAPI(): Endpoints\PostcodeAPI
+    {
+        return new Endpoints\PostcodeAPI($this);
+    }
 }
