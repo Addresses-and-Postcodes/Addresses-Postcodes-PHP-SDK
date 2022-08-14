@@ -1,11 +1,10 @@
-## Postcode count by Polygon
-
+## Postcode GEO Information
 
 [Back to the doc](../README.md)
 
 #### Description
 
-Retrieve a count of postcodes within a polygon.
+Returns latitude & longitude centroid for the postcode, County and town.
 
 ```php
 <?php
@@ -15,7 +14,7 @@ require __DIR__ . '/vendor/autoload.php';
 use AddressesAndPostcodes\Lookup\PHP\SDK\Client;
 
 $client = new Client('API_KEY');
-$output = $client->postcodes()->postcodeCountByPolygon([['lat' => 1.234, 'lng' => -2.394], ['lat' => 1.238, 'lng' => -2.040]]);
+$output = $client->postcodeInformation()->postcodeGEOInformation('ab101ab');
 
 echo '<pre>';
 print_r($output);

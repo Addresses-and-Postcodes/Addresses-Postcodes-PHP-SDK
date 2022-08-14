@@ -1,11 +1,10 @@
-## Postcode count by Polygon
-
+## Properties count by radius
 
 [Back to the doc](../README.md)
 
 #### Description
 
-Retrieve a count of postcodes within a polygon.
+Retrieve a count of properties within radius.
 
 ```php
 <?php
@@ -15,7 +14,7 @@ require __DIR__ . '/vendor/autoload.php';
 use AddressesAndPostcodes\Lookup\PHP\SDK\Client;
 
 $client = new Client('API_KEY');
-$output = $client->postcodes()->postcodeCountByPolygon([['lat' => 1.234, 'lng' => -2.394], ['lat' => 1.238, 'lng' => -2.040]]);
+$output = $client->addresses()->propertiesCountByRadius('1.234', '-2.394', '45');
 
 echo '<pre>';
 print_r($output);

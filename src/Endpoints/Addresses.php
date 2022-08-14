@@ -2,6 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
+use AddressesAndPostcodes\Lookup\PHP\SDK\Helpers\Helpers;
 use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
 
 /**
@@ -61,13 +62,14 @@ final class Addresses extends EndpointBase
     /**
      * Retrieve a count of properties a set buffer from a line.
      *
-     * @param  string $path array of [lat, lng] values of the polygon.
+     * @param  array $path array of [lat, lng] values of the polygon.
      * @param  string $radius Distance in meters from the center lat, lng
      * @return array
      */
-    public function propertiesCountByLinePolygon(string $path, string $radius): array
+    public function propertiesCountByLinePolygon(array $path, string $radius): array
     {
-        return ResponseHandler::getContent($this->client->get("/properties/total/by/radius", $path . "&radius={$radius}"));
+        $uri = Helpers::pathConverter($path);
+        return ResponseHandler::getContent($this->client->get("/properties/total/by/radius", $uri . "&radius={$radius}"));
     }
 
     /**
