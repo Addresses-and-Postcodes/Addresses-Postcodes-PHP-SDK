@@ -23,10 +23,10 @@ final class PostcodeAPI extends EndpointBase
      * @param  string $postcode Postcode of the current to lookup.
      * @return array
      */
-    /*public function postcodeToCountyAPI(string $postcode): array
+    public function postcodeToCountyAPI(string $postcode): array
     {
         return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/electoral-county"));
-    }*/
+    }
 
     /**
      * Postcode to Local Authority District
