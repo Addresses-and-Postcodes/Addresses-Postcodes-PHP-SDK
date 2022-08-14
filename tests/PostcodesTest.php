@@ -23,4 +23,15 @@ final class PostcodesTest extends TestCase
     {
         // TODO: Here
     }
+
+    /**
+     * testPostcodeGetGeographicalPath
+     *
+     * @return void
+     */
+    public function testPostcodeGetGeographicalPath(): void
+    {
+        $response = $this->client()->postcodes()->postcodeGetGeographicalPath('ab101ab');
+        $this->assertEquals(true, $response['status']);
+    }
 }

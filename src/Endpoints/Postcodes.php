@@ -2,6 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
+use AddressesAndPostcodes\Lookup\PHP\SDK\Helpers\Helpers;
 use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
 
 /**
@@ -14,9 +15,10 @@ final class Postcodes extends EndpointBase
      *
      * @error Not working properly.
      */
-    public function postcodeCountByPolygon(string $path): array
+    public function postcodeCountByPolygon(array $path): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/total/by/path"));
+        $uri_path = Helpers::pathConverter($path);
+        return ResponseHandler::getContent($this->client->get("/postcodes/total/by/path"), $uri_path);
     }
 
     /**
@@ -25,8 +27,20 @@ final class Postcodes extends EndpointBase
      * @error Not working properly.
      * @return array
      */
-    public function postcodeListByPolygon(string $path): array
+    public function postcodeListByPolygon(array $path): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/list/by/path"));
+        $uri_path = Helpers::pathConverter($path);
+        return ResponseHandler::getContent($this->client->get("/postcodes/list/by/path"), $uri_path);
+    }
+
+    /**
+     * Get the geographical path of a postcode.
+     *
+     * @param  string $postcode Retrieve the geographical path of a postcode.
+     * @return array
+     */
+    public function postcodeGetGeographicalPath(string $postcode): array
+    {
+        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/geo/path"));
     }
 }
