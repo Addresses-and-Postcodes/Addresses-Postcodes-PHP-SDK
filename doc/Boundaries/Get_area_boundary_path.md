@@ -9,7 +9,7 @@ Retrieve a list of coordinates to produce a polygon around the postcode area.
 ```php
 <?php
 
-require "../bootstrap.php";
+require __DIR__ . '/vendor/autoload.php';
 
 use AddressesAndPostcodes\Lookup\PHP\SDK\Client;
 
