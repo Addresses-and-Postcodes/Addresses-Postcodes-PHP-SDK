@@ -31,4 +31,4 @@ $response = $client->boundaries()->getAreaBoundaryPath('AB');
 
 ## License
 
-Licensed under the MIT license, see [`LICENSE`](LICENSE)
+Licensed under the MIT license, see [`LICENSE`](LICENSE.md)
