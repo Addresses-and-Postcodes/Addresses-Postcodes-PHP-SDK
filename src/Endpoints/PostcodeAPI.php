@@ -146,7 +146,7 @@ final class PostcodeAPI extends EndpointBase
      * @param  string $postcode Postcode of the current to lookup.
      * @return array
      */
-    public function PostcodeToStandardStatisticalRegionsAPI(string $postcode): array
+    public function postcodeToStandardStatisticalRegionsAPI(string $postcode): array
     {
         return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/standard-statistical-regions"));
     }

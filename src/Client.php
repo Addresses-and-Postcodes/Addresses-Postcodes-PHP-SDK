@@ -78,9 +78,9 @@ final class Client
      * @param  string|UriInterface $uri
      * @return ResponseInterface
      */
-    public function post(string $uri, array $data = [], string $body = ''): ResponseInterface
+    public function post(string $uri, array $headers = [], string $body = null): ResponseInterface
     {
-        return $this->clientBuilder->getHttpClient()->post("$uri?key={$this->api_key}", $data, $body);
+        return $this->clientBuilder->getHttpClient()->post("$uri?key={$this->api_key}", $headers, $body);
     }
 
     /**
@@ -91,7 +91,7 @@ final class Client
      *
      * @throws Exception
      */
-    public function delete($uri, array $headers = [], $body = null): ResponseInterface
+    public function delete($uri, array $headers = [], string $body = null): ResponseInterface
     {
         return $this->clientBuilder->getHttpClient()->delete("$uri?key={$this->api_key}", $headers, $body);
     }

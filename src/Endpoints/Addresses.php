@@ -73,7 +73,7 @@ final class Addresses extends EndpointBase
     /**
      * Retrieve a count of properties within a postcode.
      *
-     * @param  mixed $postcode The full postcode.
+     * @param  string $postcode The full postcode.
      * @return array
      */
     public function propertiesCountByPostcode(string $postcode): array
