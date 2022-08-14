@@ -1,6 +1,6 @@
 ## Get sector boundary path
 
-[Back to the navigation](README.md)
+[Back to the doc](../README.md)
 
 #### Description
 
