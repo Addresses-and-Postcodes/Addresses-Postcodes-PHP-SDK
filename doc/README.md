@@ -23,3 +23,8 @@ Addresses
 
 Postcode Information:
 * [Postcode GEO Information](Postcode_Information/Postcode_GEO_Information.md)
+
+Storing Information:
+* [Get Saved Searches](Storing_Information/Get_saved_searches.md)
+* [Save a Search](Storing_Information/Save_a_search.md)
+* [Delete a Search](Storing_Information/Delete_a_search.md)
