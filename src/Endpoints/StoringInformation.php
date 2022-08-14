@@ -27,7 +27,7 @@ final class StoringInformation extends EndpointBase
         dd($response);
     }*/
 
-    public function deleteASearch(string $id): void
+    public function deleteSearch(string $id): void
     {
         $response = $this->client->delete("/postcodes/door-drop", ['id' => $id]);
         dd($response);
