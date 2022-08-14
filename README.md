@@ -29,6 +29,10 @@ $client = new AddressesAndPostcodes\Lookup\PHP\SDK\Client('API_KEY');
 $response = $client->boundaries()->getAreaBoundaryPath('AB');
 ```
 
+## Documentation
+
+See the [`doc` directory](doc/) for more detailed documentation.
+
 ## License
 
 Licensed under the MIT license, see [`LICENSE`](LICENSE.md)
