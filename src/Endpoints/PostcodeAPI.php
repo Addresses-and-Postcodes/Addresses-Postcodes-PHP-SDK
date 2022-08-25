@@ -2,7 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 final class PostcodeAPI extends EndpointBase
 {
@@ -14,7 +14,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodesCurrentAndTerminatedAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/postcode"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/postcode"));
     }
 
     /**
@@ -25,7 +25,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToCountyAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/electoral-county"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/electoral-county"));
     }
 
     /**
@@ -36,7 +36,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToLocalAuthorityDistrict(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/local-authority-district"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/local-authority-district"));
     }
 
     /**
@@ -48,7 +48,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToLondonBoroughAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/london-borough"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/london-borough"));
     }
 
     /**
@@ -59,7 +59,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToElectoralWardDivisionAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/electoral-ward"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/electoral-ward"));
     }
 
     /**
@@ -70,7 +70,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToCivilParishCommunitiesAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/civil-parish"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/civil-parish"));
     }
 
     /**
@@ -81,7 +81,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToNationalGridReferenceAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/national-grid-reference"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/national-grid-reference"));
     }
 
     /**
@@ -94,7 +94,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToFormerStrategicHealthAuthority(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/hlthau"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/hlthau"));
     }
 
     /**
@@ -108,7 +108,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToNHSEnglandRegionsAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/nhser"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/nhser"));
     }
 
     /**
@@ -120,7 +120,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToUKCountryNamesCodesAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/uk-country-names"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/uk-country-names"));
     }
 
     /**
@@ -135,7 +135,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToRegionsAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/region"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/region"));
     }
 
     /**
@@ -148,7 +148,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToStandardStatisticalRegionsAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/standard-statistical-regions"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/standard-statistical-regions"));
     }
 
     /**
@@ -175,7 +175,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToWestminsterParliamentaryConstituencyAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/westminster-parliamentary-constituency"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/westminster-parliamentary-constituency"));
     }
 
     /**
@@ -190,7 +190,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToEuropeanElectoralRegionsAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/european-electoral-regions"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/european-electoral-regions"));
     }
 
     /**
@@ -203,7 +203,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToLocalLearningSkillsCouncil(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/postcode-to-local-learning-and-skills-council"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/postcode-to-local-learning-and-skills-council"));
     }
 
     /**
@@ -219,7 +219,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToTravelToWorkAreasAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/travel-to-work-areas"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/travel-to-work-areas"));
     }
 
     /**
@@ -232,7 +232,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToPrimaryCareTrusts(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/primary-care-trusts"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/primary-care-trusts"));
     }
 
     /**
@@ -246,7 +246,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToNomenclatureofUnitsforTerritorialStatistics(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/nomenclature-of-units-for-territorial-statistics"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/nomenclature-of-units-for-territorial-statistics"));
     }
 
     /**
@@ -257,7 +257,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeTo2005StatisticalWardsAPI(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/2005-statistical-wards"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/2005-statistical-wards"));
     }
 
     /**
@@ -270,7 +270,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeTo2001NationalUKCensusOutputAreaClassificationNames(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/2001-national-uk-census-output-area"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/2001-national-uk-census-output-area"));
     }
 
     /**
@@ -288,7 +288,7 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeTo2001CensusAreaStatisticsWards(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/2001-census-area-statistics"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/2001-census-area-statistics"));
     }
 
     /**
@@ -310,6 +310,6 @@ final class PostcodeAPI extends EndpointBase
      */
     public function postcodeToNationalPark(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/national-park"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/national-park"));
     }
 }

@@ -3,7 +3,7 @@
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
 use AddressesAndPostcodes\Lookup\PHP\SDK\Helpers\Helpers;
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 /**
  * Postcodes
@@ -18,7 +18,7 @@ final class Postcodes extends EndpointBase
     public function postcodeCountByPolygon(array $path): array
     {
         $uri_path = Helpers::pathConverter($path);
-        return ResponseHandler::getContent($this->client->get("/postcodes/total/by/path"), $uri_path);
+        return ResponseMediator::getContent($this->client->get("/postcodes/total/by/path"), $uri_path);
     }
 
     /**
@@ -30,7 +30,7 @@ final class Postcodes extends EndpointBase
     public function postcodeListByPolygon(array $path): array
     {
         $uri_path = Helpers::pathConverter($path);
-        return ResponseHandler::getContent($this->client->get("/postcodes/list/by/path"), $uri_path);
+        return ResponseMediator::getContent($this->client->get("/postcodes/list/by/path"), $uri_path);
     }
 
     /**
@@ -41,6 +41,6 @@ final class Postcodes extends EndpointBase
      */
     public function postcodeGetGeographicalPath(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/geo/path"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/geo/path"));
     }
 }

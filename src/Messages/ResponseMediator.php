@@ -10,9 +10,9 @@ use AddressesAndPostcodes\Lookup\PHP\SDK\Exceptions\InvalidAPITokenException;
 use AddressesAndPostcodes\Lookup\PHP\SDK\Exceptions\OutOfLookupCreditsException;
 
 /**
- * ResponseHandler
+ * ResponseMediator
  */
-final class ResponseHandler
+final class ResponseMediator
 {
     /**
      * getContent

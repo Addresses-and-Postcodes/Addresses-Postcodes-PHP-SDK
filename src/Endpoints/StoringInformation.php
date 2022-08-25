@@ -2,7 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 final class StoringInformation extends EndpointBase
 {
@@ -13,7 +13,7 @@ final class StoringInformation extends EndpointBase
      */
     /*public function getSavedSearches(): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/door-drop"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/door-drop"));
     }*/
 
     /**

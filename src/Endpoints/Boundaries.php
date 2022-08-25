@@ -2,7 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 /**
  * Boundaries
@@ -17,7 +17,7 @@ final class Boundaries extends EndpointBase
      */
     public function getAreaBoundaryPath(string $area): array
     {
-        return ResponseHandler::getContent($this->client->get("/areas/{$area}/path"));
+        return ResponseMediator::getContent($this->client->get("/areas/{$area}/path"));
     }
 
     /**
@@ -28,6 +28,6 @@ final class Boundaries extends EndpointBase
      */
     public function getSectorBoundaryPath(string $sector): array
     {
-        return ResponseHandler::getContent($this->client->get("/sectors/{$sector}/path"));
+        return ResponseMediator::getContent($this->client->get("/sectors/{$sector}/path"));
     }
 }

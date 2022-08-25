@@ -2,7 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 /**
  * PostcodeInformation
@@ -17,6 +17,6 @@ final class PostcodeInformation extends EndpointBase
      */
     public function postcodeGEOInformation(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/geo"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/geo"));
     }
 }

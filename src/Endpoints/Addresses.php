@@ -3,7 +3,7 @@
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
 use AddressesAndPostcodes\Lookup\PHP\SDK\Helpers\Helpers;
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 /**
  * Addresses
@@ -20,7 +20,7 @@ final class Addresses extends EndpointBase
     public function searchForProperty(string $building, string $postcode): array
     {
         $uri_end = http_build_query(['building' => $building, 'postcode' => $postcode]);
-        return ResponseHandler::getContent($this->client->get("/paf/properties/lookup", $uri_end));
+        return ResponseMediator::getContent($this->client->get("/paf/properties/lookup", $uri_end));
     }
 
     /**
@@ -31,7 +31,7 @@ final class Addresses extends EndpointBase
      */
     public function propertiesListByPostcode(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/addresses"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/addresses"));
     }
 
     /**
@@ -42,7 +42,7 @@ final class Addresses extends EndpointBase
      */
     public function propertiesCountByPolygon(string $path): array
     {
-        return ResponseHandler::getContent($this->client->get("/properties/total/by/path", $path));
+        return ResponseMediator::getContent($this->client->get("/properties/total/by/path", $path));
     }
 
     /**
@@ -56,7 +56,7 @@ final class Addresses extends EndpointBase
     public function propertiesCountByRadius(string $lat, string $lng, string $radius): array
     {
         $uri_end = http_build_query(['lat' => $lat, 'lng' => $lng, 'radius' => $radius]);
-        return ResponseHandler::getContent($this->client->get("/properties/total/by/radius", $uri_end));
+        return ResponseMediator::getContent($this->client->get("/properties/total/by/radius", $uri_end));
     }
 
     /**
@@ -69,7 +69,7 @@ final class Addresses extends EndpointBase
     public function propertiesCountByLinePolygon(array $path, string $radius): array
     {
         $uri = Helpers::pathConverter($path);
-        return ResponseHandler::getContent($this->client->get("/properties/total/by/radius", $uri . "&radius={$radius}"));
+        return ResponseMediator::getContent($this->client->get("/properties/total/by/radius", $uri . "&radius={$radius}"));
     }
 
     /**
@@ -80,6 +80,6 @@ final class Addresses extends EndpointBase
      */
     public function propertiesCountByPostcode(string $postcode): array
     {
-        return ResponseHandler::getContent($this->client->get("/postcodes/{$postcode}/total"));
+        return ResponseMediator::getContent($this->client->get("/postcodes/{$postcode}/total"));
     }
 }

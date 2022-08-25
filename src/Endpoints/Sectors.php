@@ -2,7 +2,7 @@
 
 namespace AddressesAndPostcodes\Lookup\PHP\SDK\Endpoints;
 
-use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseHandler;
+use AddressesAndPostcodes\Lookup\PHP\SDK\Messages\ResponseMediator;
 
 /**
  * Sectors
@@ -18,6 +18,6 @@ final class Sectors extends EndpointBase
      */
     public function getSectorCountAndPath(string $sector): array
     {
-        return ResponseHandler::getContent($this->client->get("/sectors/{$sector}/total"));
+        return ResponseMediator::getContent($this->client->get("/sectors/{$sector}/total"));
     }
 }
