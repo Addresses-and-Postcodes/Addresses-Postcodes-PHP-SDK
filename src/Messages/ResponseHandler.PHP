@@ -23,6 +23,9 @@ final class ResponseHandler
     public static function getContent(ResponseInterface $response): array
     {
         $output = json_decode($response->getBody()->getContents(), true);
+        if (!array_key_exists('status', $output))
+            throw new ErrorException($output['message'], 500, E_ERROR, $output['file'], $output['line']);
+
         if (!$output['status']) {
             switch (true) {
                 case str_contains(strtolower($output['error']), 'api token'):

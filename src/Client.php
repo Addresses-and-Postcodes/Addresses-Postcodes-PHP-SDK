@@ -29,7 +29,7 @@ final class Client
      * @param  bool $enable_error_handler
      * @return void
      */
-    public function __construct(string $api_key, bool $enable_error_handler = false, Options $options = null)
+    public function __construct(string $api_key, Options $options = null)
     {
         // API Key & New Options
         $this->api_key = $api_key;
@@ -37,9 +37,6 @@ final class Client
 
         // Client Builder
         $this->clientBuilder = $options->getClientBuilder();
-        if ($enable_error_handler) {
-            $this->clientBuilder->enableErrorHandler();
-        }
         $this->clientBuilder->addPlugin(new BaseUriPlugin($options->getUri()));
 
         // Set Headers
@@ -67,8 +64,9 @@ final class Client
      */
     public function get(string $uri, string $end_uri = null): ResponseInterface
     {
-        if ($end_uri)
+        if ($end_uri) {
             return $this->clientBuilder->getHttpClient()->get("$uri?key={$this->api_key}&$end_uri");
+        }
         return $this->clientBuilder->getHttpClient()->get("$uri?key={$this->api_key}");
     }
 

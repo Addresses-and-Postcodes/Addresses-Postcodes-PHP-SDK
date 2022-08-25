@@ -23,7 +23,7 @@ final class Postcodes extends EndpointBase
 
     /**
      * Retrieve a list of postcodes within a polygon.
-     * 
+     *
      * @error Not working properly.
      * @return array
      */

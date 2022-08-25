@@ -5,7 +5,7 @@
 - Get sector boundary path ✅
 
 ### Sectors
-- Get sectors count & path ❌
+- Get sectors count & path ✅
 
 ### Postcodes
 - Postcode count by Polygon ❌

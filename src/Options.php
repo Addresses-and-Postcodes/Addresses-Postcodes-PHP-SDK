@@ -43,7 +43,7 @@ final class Options
         $resolver->setDefaults(
             [
                 'client_builder' => new ClientBuilder(),
-                'uri' => 'http://postcodes.test/api/v3/',
+                'uri' => 'https://addressesandpostcodes.co.uk/api/v3/',
                 'uri_factory' => Psr17FactoryDiscovery::findUriFactory(),
             ]
         );

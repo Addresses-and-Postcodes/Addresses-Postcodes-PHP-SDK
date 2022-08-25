@@ -102,23 +102,4 @@ final class ClientBuilder
     {
         $this->plugins[] = new HeaderDefaultsPlugin($values);
     }
-
-    /**
-     * Enable Error Handler.
-     *
-     * @return void
-     */
-    public function enableErrorHandler(): void
-    {
-        $options = [
-            'theme' => ['default', '.frame-details>.preview:not(.-excerpt) {height: auto;}'],
-            'template' => null,
-            'excerptOnly' => false,
-            'excerptSize' => 20,
-            'header' => null,
-            'footer' => null
-        ];
-        $booboo = new BooBoo([new PrettyFormatter($options)]);
-        $booboo->register();
-    }
 }
