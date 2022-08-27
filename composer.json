@@ -50,5 +50,8 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "scripts": {
+        "tests": "vendor/bin/phpunit --colors=always --verbose --bootstrap vendor/autoload.php --configuration phpunit.xml.dist tests/"
+    }
 }

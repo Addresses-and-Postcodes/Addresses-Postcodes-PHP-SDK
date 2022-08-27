@@ -24,7 +24,7 @@ $path = [
     ["lat" => 51.475105, "lng" => -2.485288],
 ];
 
-$client = new Client('1616589158-361070052-462388701-1635564164');
+$client = new Client('API_KEY');
 $output = $client->postcodes()->postcodeListByPolygon($path);
 
 echo '<pre>';
