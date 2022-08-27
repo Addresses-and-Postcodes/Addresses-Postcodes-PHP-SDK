@@ -37,12 +37,13 @@ final class Addresses extends EndpointBase
     /**
      * Retrieve a count of properties within a polygon.
      *
-     * @param  string $path array of [lat, lng] values of the polygon.
+     * @param  array $path array of [lat, lng] values of the polygon.
      * @return array
      */
-    public function propertiesCountByPolygon(string $path): array
+    public function propertiesCountByPolygon(array $path): array
     {
-        return ResponseMediator::getContent($this->client->get("/properties/total/by/path", $path));
+        $uri = Helpers::pathConverter($path);
+        return ResponseMediator::getContent($this->client->get("/properties/total/by/path", $uri));
     }
 
     /**

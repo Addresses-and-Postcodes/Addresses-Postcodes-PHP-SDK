@@ -25,7 +25,7 @@ $path = [
 ];
 
 $client = new Client('1616589158-361070052-462388701-1635564164');
-$output = $client->addresses()->propertiesCountByPolygon($path);
+$output = $client->addresses()->propertiesCountByLinePolygon($path, '100000');
 
 echo '<pre>';
 print_r($output);

@@ -22,11 +22,18 @@ final class ResponseMediator
      */
     public static function getContent(ResponseInterface $response): array
     {
-        $output = json_decode($response->getBody()->getContents(), true);
-        if (!array_key_exists('status', $output))
+        $response = $response->getBody()->getContents();
+        $output = json_decode($response, true);
+
+        if ($output == null) {
+            echo $response;
+            die();
+        }
+
+        if (!is_array($output) || !array_key_exists('status', $output))
             throw new ErrorException($output['message'], 500, E_ERROR, $output['file'], $output['line']);
 
-        if (!$output['status']) {
+        if (is_array($output) && !$output['status']) {
             switch (true) {
                 case str_contains(strtolower($output['error']), 'api token'):
                     throw new InvalidAPITokenException($output['error']);

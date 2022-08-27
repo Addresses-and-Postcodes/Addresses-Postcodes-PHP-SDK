@@ -11,23 +11,28 @@ final class StoringInformation extends EndpointBase
      *
      * @return array
      */
-    /*public function getSavedSearches(): array
+    public function getSavedSearches(): array
     {
         return ResponseMediator::getContent($this->client->get("/postcodes/door-drop"));
-    }*/
+    }
 
     /**
      * Save a Polygon or Radius search to your account.
      *
      * @return void
      */
-    /*public function saveASearch(array $params = []): void
+    public function saveASearch(array $params = []): array
     {
         $response = $this->client->post("/postcodes/door-drop", $params);
         dd($response);
-    }*/
+    }
 
-    public function deleteSearch(string $id): void
+    /**
+     * Remove / hide a Polygon or Radius search to your account.
+     * 
+     * @return void
+     */
+    public function deleteSearch(string $id): array
     {
         $response = $this->client->delete("/postcodes/door-drop", ['id' => $id]);
         dd($response);

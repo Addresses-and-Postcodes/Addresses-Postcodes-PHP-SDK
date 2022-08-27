@@ -18,7 +18,7 @@ final class Postcodes extends EndpointBase
     public function postcodeCountByPolygon(array $path): array
     {
         $uri_path = Helpers::pathConverter($path);
-        return ResponseMediator::getContent($this->client->get("/postcodes/total/by/path"), $uri_path);
+        return ResponseMediator::getContent($this->client->get("/postcodes/total/by/path", $uri_path));
     }
 
     /**
@@ -30,7 +30,7 @@ final class Postcodes extends EndpointBase
     public function postcodeListByPolygon(array $path): array
     {
         $uri_path = Helpers::pathConverter($path);
-        return ResponseMediator::getContent($this->client->get("/postcodes/list/by/path"), $uri_path);
+        return ResponseMediator::getContent($this->client->get("/postcodes/list/by/path", $uri_path));
     }
 
     /**
