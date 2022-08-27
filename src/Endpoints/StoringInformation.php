@@ -23,8 +23,7 @@ final class StoringInformation extends EndpointBase
      */
     public function saveASearch(array $params = []): array
     {
-        $response = $this->client->post("/postcodes/door-drop", $params);
-        dd($response);
+        return ResponseMediator::getContent($this->client->post("/postcodes/door-drop", $params));
     }
 
     /**
@@ -34,7 +33,6 @@ final class StoringInformation extends EndpointBase
      */
     public function deleteSearch(string $id): array
     {
-        $response = $this->client->delete("/postcodes/door-drop", ['id' => $id]);
-        dd($response);
+        return ResponseMediator::getContent($this->client->delete("/postcodes/door-drop", ['id' => $id]));
     }
 }

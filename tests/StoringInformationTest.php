@@ -14,7 +14,8 @@ final class StoringInformationTest extends TestCase
      */
     public function testGetSavedSearches(): void
     {
-        // TODO: Here
+        $response = $this->client()->storingInformation()->getSavedSearches();
+        $this->assertEquals(true, $response['status']);
     }
 
     /**
@@ -24,7 +25,13 @@ final class StoringInformationTest extends TestCase
      */
     public function testSaveASearch(): void
     {
-        // TODO: Here
+        $response = $this->client()->storingInformation()->saveASearch([
+            'name' => 'my-first-search',
+            'params' => [
+                'endpoint' => '/api/v3/properties/total/by/path'
+            ]
+        ]);
+        $this->assertEquals(true, $response['status']);
     }
 
     /**
@@ -34,6 +41,7 @@ final class StoringInformationTest extends TestCase
      */
     public function testDeleteASearch(): void
     {
-        // TODO: Here
+        $response = $this->client()->storingInformation()->deleteSearch('1');
+        $this->assertEquals(true, $response['status']);
     }
 }

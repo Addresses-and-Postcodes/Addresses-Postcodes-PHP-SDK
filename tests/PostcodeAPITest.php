@@ -25,7 +25,8 @@ final class PostcodeAPITest extends TestCase
      */
     public function testPostcodeToCountyAPI(): void
     {
-        // TODO: Here
+        $response = $this->client()->postcodeAPI()->postcodesCurrentAndTerminatedAPI('ab101ab');
+        $this->assertEquals(true, $response['status']);
     }
 
     /**
