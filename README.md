@@ -51,7 +51,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 To run the tests, go to the root folder of the project in terminal and run the following command:
 
 ```bash
-composer tests
+$ composer tests
 ```
 
 
