@@ -1,6 +1,18 @@
-# Addresses Postcodes PHP SDK
+<h1 align="center">Addresses Postcodes PHP SDK</h1>
+
+<br>
+
+<p align="center">
+  <img src="https://addressesandpostcodes.co.uk/assets/img/ap-logo-new.svg" width="45%"/>
+</p>
+
+<br>
 
 ![GitHub](https://img.shields.io/github/license/Addresses-and-Postcodes/Addresses-Postcodes-PHP-SDK)
+
+## About
+
+This is the official PHP SDK for the Addresses and Postcodes API. It provides a way to list coordinates to produce a polygon and such.
 
 ## Requirements
 
@@ -57,7 +69,7 @@ $ composer tests
 
 ## Documentation
 
-See the [`doc` directory](doc/) for more detailed documentation.
+See the [`doc`](doc/) directory for more detailed documentation.
 
 ## License
 
