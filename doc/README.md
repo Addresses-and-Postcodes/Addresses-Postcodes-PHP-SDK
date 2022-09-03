@@ -40,7 +40,7 @@ Postcode API:
 * [Postcode to Former Strategic Health Authority](Postcode_API/Postcode_to_Former_Strategic_Health_Authority.md)
 * [Postcode to NHS England Regions](Postcode_API/Postcode_to_NHS_England_Regions.md)
 * [Postcode to UK Country Names & Codes API](Postcode_API/Postcode_to_UK_Country_Names_Codes_API.md)
-* [Postcode to Regions (RGN) (formerly Government Office Regions GOR) API](Postcode_API/Postcode_to_Regions_API.md)\
+* [Postcode to Regions (RGN) (formerly Government Office Regions GOR) API](Postcode_API/Postcode_to_Regions_API.md)
 * [Postcode to Standard Statistical Regions API](Postcode_API/Postcode_to_Standard_Statistical_Regions_API.md)
 * [Postcode to Westminster Parliamentary Constituency API](Postcode_API/Postcode_to_Westminster_Parliamentary_Constituency_API.md)
 * [Postcode to European Electoral Regions (EER) API](Postcode_API/Postcode_to_European_Electoral_Regions_API.md)
@@ -49,4 +49,6 @@ Postcode API:
 * [Postcode to Primary Care Trusts](Postcode_API/Postcode_to_Primary_Care_Trusts.md)
 * [Postcode to Nomenclature of Units for Territorial Statistics (NUTS)](Postcode_API/Postcode_to_Nomenclature_of_Units_for_Territorial_Statistics.md)
 * [Postcode to 2005 Statistical Wards API](Postcode_API/Postcode_to_2005_Statistical_Wards_API.md)
+* [Postcode to 2001 National UK Census Output Area Classification names API](Postcode_API/Postcode_to_2001_National_UK_Census_Output_Area_Classification_names_API.md)
+* [Postcode to 2001 Census Area Statistics (CAS) Wards API](Postcode_API/Postcode_to_2001_Census_Area_Statistics_Wards_API.md)
 * [Postcode to National Park API](Postcode_API/Postcode_to_National_Park_API.md)
