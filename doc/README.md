@@ -10,7 +10,7 @@ Sectors:
 
 Postcodes:
 * [Postcode count by Polygon](Postcodes/Postcode_count_by_Polygon.md)
-* [Postcode list by Polygon](Postcodes/Postcode_list_by_Polygon.md)
+* [Postcode list by Polygon](Postcodes/plbp.md)
 * [Postcode get geographical path](Postcodes/Postcode_get_geographical_path.md)
 
 Addresses
